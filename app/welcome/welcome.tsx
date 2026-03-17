@@ -3,10 +3,10 @@ import logoLight from "./logo-light.svg";
 
 export function Welcome() {
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
-      <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
+    <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 px-4">
+      <div className="flex-1 flex flex-col items-center gap-12 max-w-2xl">
+        <header className="flex flex-col items-center gap-6 text-center">
+          <div className="w-[400px] max-w-[100vw] p-4">
             <img
               src={logoLight}
               alt="React Router"
@@ -18,23 +18,31 @@ export function Welcome() {
               className="hidden w-full dark:block"
             />
           </div>
-        </header>
-        <div className="max-w-[300px] w-full space-y-6 px-4">
-          <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
+          <div className="space-y-4">
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+              Ian is leuk
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 font-medium">
+              Welkom bij je moderne web applicatie
             </p>
-            <ul>
+          </div>
+        </header>
+        <div className="max-w-[400px] w-full space-y-6">
+          <nav className="rounded-3xl border-2 border-gradient-to-r from-blue-200 to-pink-200 dark:border-purple-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 space-y-3 shadow-lg">
+            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center font-semibold text-lg">
+              ✨ Wat kan je doen?
+            </p>
+            <ul className="space-y-2">
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
                   <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
+                    className="group flex items-center gap-3 self-stretch p-4 leading-normal text-blue-600 dark:text-blue-400 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30 rounded-xl transition-all duration-300 hover:shadow-md"
                     href={href}
                     target="_blank"
                     rel="noreferrer"
                   >
                     {icon}
-                    {text}
+                    <span className="font-medium">{text}</span>
                   </a>
                 </li>
               ))}
