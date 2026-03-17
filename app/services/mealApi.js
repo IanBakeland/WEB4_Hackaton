@@ -20,52 +20,7 @@ export const fetchRandomMeal = async () => {
     }
 };
 
-/**
- * Fetch meal by ID
- * @param {string} id - Meal ID
- * @returns {Promise<Object>} - Meal object
- */
-export const fetchMealById = async (id) => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/lookup.php?i=${id}`);
-        if (!response.ok) throw new Error("Failed to fetch meal");
-        return await response.json();
-    } catch (error) {
-        console.error("Error fetching meal:", error);
-        throw error;
-    }
-};
 
-/**
- * Fetch meals by category
- * @param {string} category - Category name
- * @returns {Promise<Array>} - Array of meal objects
- */
-export const fetchMealsByCategory = async (category) => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/filter.php?c=${category}`);
-        if (!response.ok) throw new Error("Failed to fetch meals by category");
-        return await response.json();
-    } catch (error) {
-        console.error("Error fetching meals by category:", error);
-        throw error;
-    }
-};
-
-/**
- * Fetch all categories
- * @returns {Promise<Array>} - Array of category objects
- */
-export const fetchCategories = async () => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/categories.php`);
-        if (!response.ok) throw new Error("Failed to fetch categories");
-        return await response.json();
-    } catch (error) {
-        console.error("Error fetching categories:", error);
-        throw error;
-    }
-};
 
 /**
  * Fetch all countries
@@ -84,8 +39,8 @@ export const fetchAllCountries = async () => {
 
 /**
  * Fetch multiple random meals
- * @param {number} count - Number of meals to fetch
- * @returns {Promise<Array>} - Array of random meal objects
+ * @param {number} count 
+ * @returns {Promise<Array>} 
  */
 export const fetchMultipleRandomMeals = async (count = 6) => {
     try {
