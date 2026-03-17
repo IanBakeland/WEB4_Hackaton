@@ -37,22 +37,6 @@ export const fetchMealById = async (id) => {
 };
 
 /**
- * Search meals by name
- * @param {string} name - Meal name to search
- * @returns {Promise<Array>} - Array of meal objects
- */
-export const searchMealsByName = async (name) => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/search.php?s=${name}`);
-        if (!response.ok) throw new Error("Failed to search meals");
-        return await response.json();
-    } catch (error) {
-        console.error("Error searching meals:", error);
-        throw error;
-    }
-};
-
-/**
  * Fetch meals by category
  * @param {string} category - Category name
  * @returns {Promise<Array>} - Array of meal objects
@@ -79,6 +63,21 @@ export const fetchCategories = async () => {
         return await response.json();
     } catch (error) {
         console.error("Error fetching categories:", error);
+        throw error;
+    }
+};
+
+/**
+ * Fetch all countries
+ * @returns {Promise<Array>} - Array of country/area objects
+ */
+export const fetchAllCountries = async () => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/list.php?a=list`);
+        if (!response.ok) throw new Error("Failed to fetch countries");
+        return await response.json();
+    } catch (error) {
+        console.error("Error fetching countries:", error);
         throw error;
     }
 };
