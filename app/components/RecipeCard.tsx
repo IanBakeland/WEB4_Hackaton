@@ -26,7 +26,7 @@ export function RecipeCard({ recipe }: { recipe: Recipe }) {
                         rel="noreferrer"
                         className="recipe-view-btn"
                     >
-                        View Recipe
+                        View Ingredients
                     </a>
                 </div>
             </div>
