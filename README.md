@@ -8,3 +8,8 @@ Inspect the API Links to an external site.  (it is not following REST convention
 Create a new React Router project
 Code... test... repeat...
 Submit your GitHub repository URL for this assignment (1 per group) 
+
+
+
+
+Ik haat mijn leven, ik haat het
